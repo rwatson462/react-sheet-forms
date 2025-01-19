@@ -3,13 +3,18 @@ import {Input} from "@/components/ui/input.tsx";
 import {Button} from "@/components/ui/button.tsx";
 import {SheetClose, SheetDescription, SheetFooter, SheetHeader, SheetTitle} from "@/components/ui/sheet.tsx";
 import {useToast} from "@/hooks/use-toast.ts";
-import {CreateSeasonFormDefinition} from "@/components/forms/create-season/createSeasonFormDefinition.ts";
 import {Calendar} from "@/components/ui/calendar.tsx";
 import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover.tsx";
 import { CalendarIcon } from "lucide-react";
 import {cn} from "@/lib/utils.ts";
 import {format} from "date-fns";
 import {useSheet} from "@/components/sheet/useSheet.ts";
+
+interface CreateSeasonFormDefinition {
+  name: string
+  startDate: string
+  endDate: string
+}
 
 function pad(str: string, padding: string, size: number = 2) {
   if (str.length < size) {

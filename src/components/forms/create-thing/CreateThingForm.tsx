@@ -1,11 +1,17 @@
 import {Controller, useForm} from "react-hook-form";
-import {CreateThingFormDefinition} from "@/components/forms/create-thing/createThingFormDefinition.ts";
 import {Input} from "@/components/ui/input.tsx";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select.tsx";
 import {SheetDescription, SheetHeader, SheetTitle} from "@/components/ui/sheet.tsx";
 import {useToast} from "@/hooks/use-toast.ts";
 import {useSheet} from "@/components/sheet/useSheet.ts";
 import {FormFooter} from "@/components/sheet-forms/FormFooter.tsx";
+
+interface CreateThingFormDefinition {
+  name: string
+  size: 'sm'|'md'|'lg'|'xl'
+  count: number
+}
+
 
 export function CreateThingForm() {
   const { closeSheet } = useSheet()

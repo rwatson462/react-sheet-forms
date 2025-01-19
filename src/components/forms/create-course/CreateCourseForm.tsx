@@ -3,9 +3,15 @@ import {Input} from "@/components/ui/input.tsx";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select.tsx";
 import {SheetDescription, SheetHeader, SheetTitle} from "@/components/ui/sheet.tsx";
 import {useToast} from "@/hooks/use-toast.ts";
-import {CreateCourseFormDefinition} from "@/components/forms/create-course/createCourseFormDefinition.ts";
 import {useSheet} from "@/components/sheet/useSheet.ts";
 import {FormFooter} from "@/components/sheet-forms/FormFooter.tsx";
+
+interface CreateCourseFormDefinition {
+  name: string
+  numberOfLessons: number
+  dayOfWeek: 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday' | 'saturday' | 'sunday'
+}
+
 
 export function CreateCourseForm() {
   const { closeSheet } = useSheet()
