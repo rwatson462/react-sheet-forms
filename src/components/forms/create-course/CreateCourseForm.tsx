@@ -12,7 +12,6 @@ interface CreateCourseFormDefinition {
   dayOfWeek: 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday' | 'saturday' | 'sunday'
 }
 
-
 export function CreateCourseForm() {
   const { closeSheet } = useSheet()
   const { register, handleSubmit, control } = useForm<CreateCourseFormDefinition>()
