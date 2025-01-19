@@ -1,6 +1,6 @@
 import {createContext} from "react";
 
-export type AvailableSheet = 'create-thing-form'
+export type AvailableSheet = 'create-thing-form'|'create-course-form'|'create-season-form'
 
 interface SheetContext {
   isOpen: boolean

@@ -6,8 +6,10 @@ import {
   DropdownMenuLabel, DropdownMenuSeparator,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu.tsx";
-import {CreateThingSheetForm} from "@/components/sheet-forms/CreateThingSheetForm.tsx";
+import {CreateThingSheet} from "@/components/forms/create-thing/CreateThingSheet.tsx";
 import { useSheet } from "./components/sheet/useSheet";
+import {CreateCourseSheet} from "@/components/forms/create-course/CreateCourseSheet.tsx";
+import {CreateSeasonSheet} from "@/components/forms/create-season/CreateSeasonSheet.tsx";
 
 export function App() {
   const { openSheet } = useSheet()
@@ -25,17 +27,19 @@ export function App() {
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={() => openSheet('create-thing-form')}>Create thing</DropdownMenuItem>
             <DropdownMenuSeparator/>
-            <DropdownMenuLabel>Other Things</DropdownMenuLabel>
+            <DropdownMenuLabel>Classmanager things</DropdownMenuLabel>
             <DropdownMenuSeparator/>
-            <DropdownMenuItem>Billing</DropdownMenuItem>
-            <DropdownMenuItem>Team</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => openSheet('create-course-form')}>Create course</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => openSheet('create-season-form')}>Create season</DropdownMenuItem>
             <DropdownMenuItem>Subscription</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </main>
 
       {/* Forms */}
-      <CreateThingSheetForm/>
+      <CreateThingSheet/>
+      <CreateCourseSheet/>
+      <CreateSeasonSheet/>
 
       {/* Other bits */}
       <Toaster/>
